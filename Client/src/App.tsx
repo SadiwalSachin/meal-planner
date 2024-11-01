@@ -10,6 +10,7 @@ import { SignUp } from "./components/sign-up";
 import ProtectedRoute from "./components/ProtectedRoute";
 import SelectedRecipe from "./components/SelectedRecipe";
 import { GroceryCartComponent } from "./components/grocery-cart";
+import UserInfoPage from "./hooks/user-info";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path="/grocery" element={<GrocerySearchComponent/>}/>
           <Route path="/grocery-list" element={<GroceryCartComponent/>}/>
         </Route>
+        <Route  path="/delivery-info" element={<UserInfoPage/>}/>
         <Route path={"/profile"} element={<ProfilePageComponent />} />
         <Route path="/edit-profile" element={<EditProfile/>}/>
         <Route path="/sign-up" element={<SignUp/>}/>

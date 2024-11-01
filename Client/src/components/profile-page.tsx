@@ -156,20 +156,22 @@ export function ProfilePageComponent() {
             <CardContent>
               <div className="space-y-4">
                 <div className="flex items-center">
-                  <User className="h-5 w-5 text-muted-foreground mr-2" />
+                  {/* <User className="h-5 w-5 text-muted-foreground mr-2" /> */}
                   <span>Male, 35 years old</span>
                 </div>
                 <div className="flex items-center">
-                  <Mail className="h-5 w-5 text-muted-foreground mr-2" />
+                  {/* <Mail className="h-5 w-5 text-muted-foreground mr-2" /> */}
                   <span>john.doe@example.com</span>
                 </div>
-                <div className="flex items-center">
-                  <Phone className="h-5 w-5 text-muted-foreground mr-2" />
-                  <span>+1 (555) 123-4567</span>
+                <div className="flex items-center gap-4">
+                    <span>Weight - 70</span>
+                    <span>Height - 89</span>
                 </div>
-                <div className="flex items-center">
-                  <MapPin className="h-5 w-5 text-muted-foreground mr-2" />
-                  <span>New York, NY</span>
+                <div className="flex items-center gap-4">
+                  <h2 className="font-semibold">Health goal - </h2>
+                </div>
+                <div className="flex items-center gap-4">
+                  <h2 className="font-semibold">Activity level- </h2>
                 </div>
               </div>
               <div className="mt-6 space-y-4">
