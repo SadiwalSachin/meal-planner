@@ -9,8 +9,8 @@ import {
 import { useSelector } from "react-redux";
 
 const Header = () => {
-
-  const {groceryItems} = useSelector((state)=>state.groceryReducer)
+  const meal = useSelector((state) => state.mealReducer);
+  const { groceryItems } = useSelector((state) => state.groceryReducer);
 
   return (
     <>
@@ -23,18 +23,12 @@ const Header = () => {
             </CardHeader>
             <CardContent>
               <div className="space-y-2">
-                <div className="flex justify-between items-center">
-                  <span>Monday</span>
-                  <span>Grilled Chicken Salad</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span>Tuesday</span>
-                  <span>Vegetable Stir Fry</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span>Wednesday</span>
-                  <span>Salmon with Roasted Vegetables</span>
-                </div>
+                {meal?.map((data) => (
+                  <div className="flex justify-between items-center">
+                    <span>{data}</span>
+                  </div>
+                ))}
+
                 {/* Add more days as needed */}
               </div>
             </CardContent>
@@ -72,10 +66,14 @@ const Header = () => {
             </CardHeader>
             <CardContent>
               <ul className="list-disc list-inside space-y-1">
-               {groceryItems.length>0 ? groceryItems.map((data)=>(
-                <li>{data.name} - {data.price}$</li>
-               )) : "" }
-                
+                {groceryItems.length > 0
+                  ? groceryItems.map((data) => (
+                      <li>
+                        {data.name} - {data.price}$
+                      </li>
+                    ))
+                  : ""}
+
                 {/* Add more items as needed */}
               </ul>
             </CardContent>

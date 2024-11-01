@@ -20,6 +20,8 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { useDispatch } from "react-redux";
+import { addToMeal } from "@/redux/Slices/mealSlice";
 
 interface MealCardProps {
   name: string;
@@ -40,6 +42,9 @@ function MealCard({
   fat,
   imageUrl,
 }: MealCardProps) {
+
+  const dispatch = useDispatch()
+
   return (
     <Card className="w-full">
       <CardHeader>
@@ -72,7 +77,9 @@ function MealCard({
         </div>
       </CardContent>
       <CardFooter>
-        <Button className="w-full">
+        <Button
+        onClick={()=>dispatch(addToMeal(name))}
+        className="w-full">
           <PlusCircle className="mr-2 h-4 w-4" />
           Add to Meal Plan
         </Button>
@@ -122,6 +129,7 @@ export function PlanMeal() {
     setDietaryPreferenceFilter(value);
     filterMeals();
   };
+
 
   return (
     <div className="flex h-screen overflow-hidden">
