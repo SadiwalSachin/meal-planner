@@ -14,11 +14,11 @@ const Header = () => {
 
   return (
     <>
-      <main className="flex-1 overflow-y-auto p-6">
+      <main className="flex-1 overflow-y-auto p-6 bg-back-400 ">
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          <Card>
+          <Card className="bg-card1-400">
             <CardHeader>
-              <CardTitle>Meal Plan Calendar</CardTitle>
+              <CardTitle>Meal PlanCalendar</CardTitle>
               <CardDescription>Your upcoming meals</CardDescription>
             </CardHeader>
             <CardContent>
@@ -33,13 +33,13 @@ const Header = () => {
               </div>
             </CardContent>
           </Card>
-          <Card>
+          <Card className="bg-card2-400">
             <CardHeader>
               <CardTitle>Nutritional Overview</CardTitle>
               <CardDescription>Weekly nutrition summary</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="space-y-2">
+              <div className="space-y-2 ">
                 <div className="flex justify-between items-center">
                   <span>Calories</span>
                   <span>2100 / day</span>
@@ -59,7 +59,7 @@ const Header = () => {
               </div>
             </CardContent>
           </Card>
-          <Card>
+          <Card className="bg-card3-400">
             <CardHeader>
               <CardTitle>Shopping List</CardTitle>
               <CardDescription>Items to buy this week</CardDescription>

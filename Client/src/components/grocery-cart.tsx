@@ -31,8 +31,8 @@ export function GroceryCartComponent() {
 
   return (
     <div className="container p-3">
-      <Card className=" w-full  ">
-        <CardHeader>
+      <Card className=" w-full bg-back-400 ">
+        <CardHeader className=''>
           <CardTitle className="text-2xl font-bold flex items-center">
             <ShoppingCart className="mr-2" />
             Your Grocery Cart

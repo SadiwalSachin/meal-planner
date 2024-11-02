@@ -20,7 +20,7 @@ export function EditProfile() {
   }
 
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="container mx-auto px-4 py-8 ">
       <div className="mb-6 flex items-center">
         <Button 
         onClick={()=>navigate(-1)}
@@ -29,7 +29,7 @@ export function EditProfile() {
         </Button>
         <h1 className="text-2xl font-bold">Edit Profile</h1>
       </div>
-      <Card className="mx-auto max-w-2xl">
+      <Card className="mx-auto max-w-2xl bg-orange-200">
         <form onSubmit={handleSubmit}>
           <CardHeader>
             <CardTitle className="text-center">Your Profile Information</CardTitle>
@@ -45,26 +45,26 @@ export function EditProfile() {
                 Change Picture
               </Button>
             </div>
-            <div className="space-y-2">
+            <div className="space-y-2 ">
               <Label htmlFor="name">Full Name</Label>
-              <Input id="name" placeholder="John Doe" />
+              <Input className='bg-white' id="name" placeholder="John Doe" />
             </div>
             <div className="space-y-2">
               <Label htmlFor="email">Email</Label>
-              <Input id="email" type="email" placeholder="john.doe@example.com" />
+              <Input className='bg-white'  id="email" type="email" placeholder="john.doe@example.com" />
             </div>
             <div className="space-y-2">
               <Label htmlFor="phone">Phone Number</Label>
-              <Input id="phone" type="tel" placeholder="+1 (555) 123-4567" />
+              <Input className='bg-white'  id="phone" type="tel" placeholder="+1 (555) 123-4567" />
             </div>
             <div className="space-y-2">
               <Label htmlFor="dob">Date of Birth</Label>
-              <Input id="dob" type="date" />
+              <Input className='bg-white'  id="dob" type="date" />
             </div>
             <div className="space-y-2">
               <Label htmlFor="gender">Gender</Label>
               <Select>
-                <SelectTrigger id="gender">
+                <SelectTrigger  className='bg-white'  id="gender">
                   <SelectValue placeholder="Select gender" />
                 </SelectTrigger>
                 <SelectContent>
@@ -77,7 +77,7 @@ export function EditProfile() {
             </div>
             <div className="space-y-2">
               <Label htmlFor="bio">Bio</Label>
-              <Textarea id="bio" placeholder="Tell us about yourself" />
+              <Textarea className='bg-white' id="bio" placeholder="Tell us about yourself" />
             </div>
             <div className="space-y-2">
               <Label>Dietary Preferences</Label>
@@ -91,7 +91,7 @@ export function EditProfile() {
             </div>
           </CardContent>
           <CardFooter>
-            <Button type="submit" className="w-full">Save Changes</Button>
+            <Button type="submit" className="w-full bg-green-700">Save Changes</Button>
           </CardFooter>
         </form>
       </Card>

@@ -58,7 +58,7 @@ export function GrocerySearchComponent() {
 
 
   return (
-    <main className="container mx-auto px-4 py-8 overflow-y-scroll">
+    <main className="container mx-auto px-4 py-8 overflow-y-scroll bg-back-400">
       <div className="mb-8 space-y-4">
         <h1 className="text-3xl font-bold">Grocery Search</h1>
         <div className="flex flex-col sm:flex-row gap-4">
