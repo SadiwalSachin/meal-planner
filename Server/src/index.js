@@ -4,23 +4,20 @@ import dotenv from "dotenv"
 dotenv.config()
 
 const PORT = process.env.PORT || 3000
-app.listen(PORT,()=>{
-    console.log(`Server is listening from ${PORT}`)
+
+dbConnect()
+.then(()=>{
+    console.log("DB Connected Successfully At Index File");
+    app.listen(PORT,()=>{
+        console.log(`Server is listening from ${PORT}`)
+    })
+
+    app.on("error",()=>{
+        console.log("error");
+    })
 })
-
-// dbConnect()
-// .then(()=>{
-//     console.log("DB Connected Successfully At Index File");
-//     app.listen(PORT,()=>{
-//         console.log(`Server is listening from ${PORT}`)
-//     })
-
-//     app.on("error",()=>{
-//         console.log("error");
-//     })
-// })
-// .catch((error)=>{
-//     console.log(error)
-//     process.exit(1)
-// })
+.catch((error)=>{
+    console.log(error)
+    process.exit(1)
+})
 
