@@ -18,18 +18,18 @@ interface GroceryItem {
 }
 
 const groceryItems2: GroceryItem[] = [
-  { id: 1, name: "Organic Bananas", price: 0.99, unit: "lb", category: "Fruits", image: "/placeholder.svg?height=100&width=100" },
-  { id: 2, name: "Whole Milk", price: 3.49, unit: "gallon", category: "Dairy", image: "/placeholder.svg?height=100&width=100" },
-  { id: 3, name: "Whole Wheat Bread", price: 2.99, unit: "loaf", category: "Bakery", image: "/placeholder.svg?height=100&width=100" },
-  { id: 4, name: "Chicken Breast", price: 5.99, unit: "lb", category: "Meat", image: "/placeholder.svg?height=100&width=100" },
-  { id: 5, name: "Spinach", price: 2.49, unit: "bunch", category: "Vegetables", image: "/placeholder.svg?height=100&width=100" },
-  { id: 6, name: "Eggs", price: 3.99, unit: "dozen", category: "Dairy", image: "/placeholder.svg?height=100&width=100" },
-  { id: 7, name: "Tomatoes", price: 1.99, unit: "lb", category: "Vegetables", image: "/placeholder.svg?height=100&width=100" },
-  { id: 8, name: "Greek Yogurt", price: 4.49, unit: "32oz", category: "Dairy", image: "/placeholder.svg?height=100&width=100" },
-  { id: 9, name: "Salmon Fillet", price: 9.99, unit: "lb", category: "Seafood", image: "/placeholder.svg?height=100&width=100" },
-  { id: 10, name: "Avocado", price: 1.49, unit: "each", category: "Fruits", image: "/placeholder.svg?height=100&width=100" },
-  { id: 11, name: "Brown Rice", price: 3.29, unit: "2lb bag", category: "Grains", image: "/placeholder.svg?height=100&width=100" },
-  { id: 12, name: "Olive Oil", price: 7.99, unit: "16.9oz bottle", category: "Pantry", image: "/placeholder.svg?height=100&width=100" },
+  { id: 1, name: "Organic Bananas", price: 0.99, unit: "lb", category: "Fruits", image: "https://i.pinimg.com/564x/22/d2/94/22d294948309673bdd7a957de17eb667.jpg" },
+  { id: 2, name: "Whole Milk", price: 3.49, unit: "gallon", category: "Dairy", image: "https://i.pinimg.com/564x/5f/c8/27/5fc827023db43fb3caf2a6e4ffd35395.jpg" },
+  { id: 3, name: "Whole Wheat Bread", price: 2.99, unit: "loaf", category: "Bakery", image: "https://i.pinimg.com/564x/91/be/e5/91bee5e58c53bc63169dedd49e5da833.jpg" },
+  { id: 4, name: "Chicken Breast", price: 5.99, unit: "lb", category: "Meat", image: "https://i.pinimg.com/564x/44/73/90/447390081444f58a0f59e9045ff227ad.jpg" },
+  { id: 5, name: "Spinach", price: 2.49, unit: "bunch", category: "Vegetables", image: "https://i.pinimg.com/564x/81/21/35/8121350a5f1cc108c52e27a10c2503dd.jpg" },
+  { id: 6, name: "Eggs", price: 3.99, unit: "dozen", category: "Dairy", image: "https://i.pinimg.com/564x/b1/b0/ca/b1b0ca7aae09ea4e748758a28e447e93.jpg" },
+  { id: 7, name: "Tomatoes", price: 1.99, unit: "lb", category: "Vegetables", image: "https://i.pinimg.com/564x/c2/da/d0/c2dad0767e554eb74dc1d7b59b79581f.jpg" },
+  { id: 8, name: "Greek Yogurt", price: 4.49, unit: "32oz", category: "Dairy", image: "https://i.pinimg.com/564x/86/3b/02/863b020f8dcc36734df37196767c487c.jpg" },
+  { id: 9, name: "Salmon Fillet", price: 9.99, unit: "lb", category: "Seafood", image: "https://i.pinimg.com/736x/c5/af/7b/c5af7b02b9f00f2e2a9f5fa430561dc3.jpg" },
+  { id: 10, name: "Avocado", price: 1.49, unit: "each", category: "Fruits", image: "https://i.pinimg.com/564x/0e/6f/ca/0e6fcac36ad9b8943eab5f7b0a7debcb.jpg" },
+  { id: 11, name: "Brown Rice", price: 3.29, unit: "2lb bag", category: "Grains", image: "https://i.pinimg.com/564x/10/1d/66/101d6638078cb08fdb0db330a2885427.jpg" },
+  { id: 12, name: "Olive Oil", price: 7.99, unit: "16.9oz bottle", category: "Pantry", image: "https://i.pinimg.com/564x/59/70/db/5970db375e343d5d2cd29f2b250ec92d.jpg" },
 ]
 
 export function GrocerySearchComponent() {
