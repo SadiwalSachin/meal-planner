@@ -122,6 +122,11 @@ export function GrocerySearchComponent() {
                   </Button>
                   
                   <span className="w-8 text-center">
+                    {groceryItems.map((itemData)=>{
+                      if(itemData.id == item.id){
+                       return itemData.count 
+                      }
+                    })}
                   </span>
                   <Button
                     variant="outline"

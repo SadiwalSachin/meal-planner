@@ -11,6 +11,7 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import SelectedRecipe from "./components/SelectedRecipe";
 import { GroceryCartComponent } from "./components/grocery-cart";
 import UserInfoPage from "./hooks/user-info";
+import { SignIn } from "./components/sign-in";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
         <Route path={"/profile"} element={<ProfilePageComponent />} />
         <Route path="/edit-profile" element={<EditProfile/>}/>
         <Route path="/sign-up" element={<SignUp/>}/>
+        <Route path="/sign-in" element={<SignIn/>}/>
       </Routes>
     </>
   );

@@ -201,10 +201,7 @@ export function SignUp() {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <div className="mb-6 flex items-center">
-        <Button variant="ghost" className="mr-4 p-0" aria-label="Go back">
-          <ArrowLeft className="h-6 w-6" />
-        </Button>
+      <div className="mb-6 flex items-center justify-center">
         <h1 className="text-2xl font-bold">Sign Up</h1>
       </div>
       <Card className="mx-auto max-w-2xl">
