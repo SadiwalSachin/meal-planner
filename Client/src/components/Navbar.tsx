@@ -37,7 +37,7 @@ const Navbar = () => {
 
   return (
     <>
-      <header className="flex items-center justify-between px-6 py-4 bg-white border-b">
+      <header className="flex items-center justify-between px-6 py-4  bg-navie-400 ">
         <div className="flex items-center">
           <Sheet>
             <SheetTrigger asChild>
@@ -90,14 +90,14 @@ const Navbar = () => {
               </nav>
             </SheetContent>
           </Sheet>
-          <h1 className="ml-4 text-xl font-semibold text-gray-800">
+          <h1 className="ml-4 text-xl font-semibold text-white">
             Dashboard
           </h1>
         </div>
         <div className="flex items-center">
           <Button
           onClick={()=>navigate("/grocery-list")}
-          variant="ghost" size="icon" className="mr-2 relative">
+          variant="ghost" size="icon" className="mr-2 relative text-white">
             {groceryItems.length>0 ? <div className="h-2 w-2 absolute top-0 bg-red-400 rounded-2xl"></div> : "" }
             <Bell className="h-5 w-5" />
             <span className="sr-only">Notifications</span>

@@ -49,7 +49,7 @@ export function HomePageComponent() {
       {/* Sidebar */}
       {/* <aside className="hidden w-64 bg-white shadow-md lg:block">
         <div className="flex h-full flex-col">
-          <div className="flex items-center justify-center h-16 border-b">
+          <div className="flex items-center justify-center h-16 border-b bg-lightg-400">
             <h1 className="text-xl font-bold text-gray-800">Meal Planner</h1>
           </div>
           <nav className="flex-1 overflow-y-auto">

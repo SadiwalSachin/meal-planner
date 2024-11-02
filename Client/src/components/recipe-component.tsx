@@ -105,7 +105,7 @@ export function RecipeComponent() {
   }
 
   return (
-    <main className="container mx-auto px-4 py-8 overflow-y-scroll">
+    <main className="container mx-auto px-4 py-8 overflow-y-scroll bg-back-400">
       <div className="flex flex-col lg:flex-row gap-8 ">
         {/* Left side: Search, filter, and recipe cards */}
         <div className="w-full">

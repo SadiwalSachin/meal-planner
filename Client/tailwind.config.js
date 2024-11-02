@@ -13,6 +13,27 @@ export default {
   			sm: 'calc(var(--radius) - 4px)'
   		},
   		colors: {
+			peach: {
+				400: "#fdefe0"
+			},
+			back: {
+				400: "#f2ebe3"
+			},
+			card1: {
+				400: "#ffe3e2"
+			},
+			card2: {
+				400: "#dbf0dc"
+			},
+			card3: {
+				400: "#dfeffe"
+			},
+			navie: {
+				400: "#1A3636"
+			},
+			dashie: {
+				200: "rgba(196,221,218,255)"
+			},
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
   			card: {

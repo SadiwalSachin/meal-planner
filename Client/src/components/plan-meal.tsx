@@ -132,7 +132,7 @@ export function PlanMeal() {
 
 
   return (
-    <div className="flex h-screen overflow-hidden">
+    <div className="flex h-screen overflow-hidden bg-back-400">
       <div className="flex flex-1 flex-col overflow-hidden ">
         <main className="flex-1 overflow-y-auto py-6">
           <div className="container mx-auto px-4">
@@ -145,13 +145,13 @@ export function PlanMeal() {
               <Input
                 type="search"
                 placeholder="Search meals..."
-                className="pl-10"
+                className="pl-10 bg-gray-200"
               />
             </div>
             <div className="flex gap-4">
               <Select onValueChange={handleMealTypeChange}>
                 <SelectTrigger
-                className="w-full">
+                className="w-full bg-gray-200">
                   <SelectValue placeholder="Meal Type" />
                 </SelectTrigger >
                 <SelectContent >
@@ -162,7 +162,7 @@ export function PlanMeal() {
                 </SelectContent>
               </Select>
               <Select onValueChange={handleDietaryPreferenceChange}>
-                <SelectTrigger className="w-full">
+                <SelectTrigger className="w-full bg-gray-200">
                   <SelectValue placeholder="Dietary Restrictions" />
                 </SelectTrigger>
                 <SelectContent>
@@ -173,7 +173,7 @@ export function PlanMeal() {
                 </SelectContent>
               </Select>
               <Select>
-                <SelectTrigger className="w-full">
+                <SelectTrigger className="w-full bg-gray-200">
                   <SelectValue placeholder="Cuisine" />
                 </SelectTrigger>
                 <SelectContent>
@@ -183,7 +183,7 @@ export function PlanMeal() {
                   <SelectItem value="chinese">Chinese</SelectItem>
                 </SelectContent>
               </Select>
-              <Button variant="outline" className="w-full">
+              <Button variant="outline" className="w-full bg-gray-200">
                 <Filter className="mr-2 h-4 w-4" />
                 More Filters
               </Button>
