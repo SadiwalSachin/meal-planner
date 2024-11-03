@@ -15,7 +15,7 @@ const Header = () => {
   return (
     <>
       <main className="flex-1 overflow-y-auto p-6 bg-back-400 ">
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 ">
           <Card className="bg-card1-400">
             <CardHeader>
               <CardTitle>Meal PlanCalendar</CardTitle>
