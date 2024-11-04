@@ -96,7 +96,7 @@ export const userRegistration = async (req, res) => {
     await newUser.save();
     console.log("User created successfully");
     
-    res.status(201).json({success:true, message: "User registered successfully!", user: newUser });
+    res.status(201).json({success:true, message: "User registered successfully!" });
   } catch (error) {
     res.status(500).json({ message: "Server error", error: error.message });
   }
@@ -105,17 +105,18 @@ export const userRegistration = async (req, res) => {
 // Controller for user login
 export const login = async (req, res) => {
   try {
-    const { identifier, password } = req.body;
+    const { email, password } = req.body;
+
+    console.log(email,password);
+    
 
     // Validate input
-    if (!identifier || !password) {
+    if (!email || !password) {
       return res.status(400).json({ message: "Username or email and password are required." });
     }
 
     // Find user by username or email
-    const user = await User.findOne({
-      $or: [{ username: identifier }, { email: identifier }]
-    });
+    const user = await User.findOne({email});
 
     if (!user) {
       return res.status(400).json({ message: "Invalid credentials." });
@@ -130,20 +131,40 @@ export const login = async (req, res) => {
     // Generate JWT token
     const token = jwt.sign(
       { userId: user._id, username: user.username },
-      process.env.JWT_SECRET,
-      { expiresIn: "1h" } // Token expires in 1 hour
+      process.env.ACCESS_TOKEN_SECRET,
+      { expiresIn: "10h" } 
     );
 
+    const loggedInUser = await User.findById(user._id).select("-password")
+
     res.status(200).json({
+      success:true,
       message: "Login successful!",
       token,
-      user: {
-        id: user._id,
-        username: user.username,
-        email: user.email
-      }
+      user: loggedInUser
     });
   } catch (error) {
     res.status(500).json({ message: "Server error", error: error.message });
   }
 };
+
+export const getUserDetails = async (req, res) => {
+ try {
+   const id = req.user._id
+ 
+   const user = await User.findById(id)
+ 
+   if(user){
+     return res.status(201).json({
+       success:true,
+       message:"User details fetched successfully",
+       userDetails:user
+     })
+   }
+ } catch (error) {
+  return res.status(500).json({success:false,
+    message:"Some error occured while fetching user details",
+    error:error
+  })
+ }
+}

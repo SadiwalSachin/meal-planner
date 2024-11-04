@@ -1,16 +1,15 @@
-import { useNavigate } from 'react-router-dom'
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
-const ProtectedRoute = ({component}) => {
+const ProtectedRoute = ({ component }) => {
+  const navigate = useNavigate();
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (!token) {
+      navigate("/sign-in");
+    }
+  }, []);
+  return <>{component}</>;
+};
 
-    const navigate = useNavigate()
-    const signIn = true
-    if(!signIn){
-        navigate("/sign-up")
-    } else return (
-    <>
-    {component}
-    </>
-  )
-}
-
-export default ProtectedRoute
+export default ProtectedRoute;

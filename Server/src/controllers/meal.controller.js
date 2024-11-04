@@ -12,7 +12,8 @@ const meals = [
       fats: 10,
       dietaryPreferences: ["Gluten-Free", "Low-Carb"],
       healthGoals: ["Weight Loss", "High Protein"],
-      mealType: "Lunch"
+      mealType: "Lunch",
+      image:"https://media.istockphoto.com/id/1036965974/photo/caprese-lunch-bowl-with-grilled-chicken.jpg?s=612x612&w=0&k=20&c=VoB4Gag47G7q2KlVIWj2JzB915zCk8A8i0UirW2WTa8="
     },
     {
       id: 2,
@@ -24,7 +25,8 @@ const meals = [
       fats: 15,
       dietaryPreferences: ["Vegan", "Gluten-Free"],
       healthGoals: ["Heart Health", "High Fiber"],
-      mealType: "Lunch"
+      mealType: "Lunch",
+      image:"https://simplyceecee.co/wp-content/uploads/2018/07/veganbuddhabowl-2.jpg"
     },
     {
       id: 3,
@@ -36,7 +38,8 @@ const meals = [
       fats: 14,
       dietaryPreferences: ["Vegetarian"],
       healthGoals: ["Healthy Fats", "Quick & Easy"],
-      mealType: "Breakfast"
+      mealType: "Breakfast",
+      image:"https://img.freepik.com/free-photo/avocado-open-toast-with-avocado-slices-lemon-flax-seeds-sesame-seeds-black-bread-slices-top-view_2831-797.jpg"
     },
     {
       id: 4,
@@ -48,7 +51,8 @@ const meals = [
       fats: 8,
       dietaryPreferences: ["Low-Carb", "Vegetarian"],
       healthGoals: ["Weight Loss", "High Protein"],
-      mealType: "Breakfast"
+      mealType: "Breakfast",
+      image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMK_daSKlNyP_ws6ixVDq4Cx_cCMpfKuq2fg&s"
     },
     {
       id: 5,
@@ -60,7 +64,8 @@ const meals = [
       fats: 25,
       dietaryPreferences: ["Gluten-Free", "Paleo"],
       healthGoals: ["Heart Health", "Muscle Gain"],
-      mealType: "Dinner"
+      mealType: "Dinner",
+      image:"https://media.istockphoto.com/id/1091500222/photo/grilled-salmon-with-french-fries-and-asparagus.jpg?s=612x612&w=0&k=20&c=nd5Kr3iq9ATyf0j9etHOrqz2yyG7QsoahEBXvUkf4qY="
     },
     {
       id: 6,
@@ -72,7 +77,8 @@ const meals = [
       fats: 20,
       dietaryPreferences: ["Low-Carb"],
       healthGoals: ["Muscle Gain", "High Protein"],
-      mealType: "Dinner"
+      mealType: "Dinner",
+      image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTc1WpKkmp8pWn-z4uTilaWKFloh_iIHgL-aw&s"
     },
     {
       id: 7,
@@ -84,7 +90,8 @@ const meals = [
       fats: 3,
       dietaryPreferences: ["Vegetarian", "Gluten-Free"],
       healthGoals: ["Digestive Health", "Low Fat"],
-      mealType: "Snack"
+      mealType: "Snack",
+      image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSr-5RIP-6vI81DZYPpzYf4AQYB9nB_LHVbyA&s"
     },
     {
       id: 8,
@@ -96,7 +103,8 @@ const meals = [
       fats: 12,
       dietaryPreferences: ["Gluten-Free"],
       healthGoals: ["Quick & Easy", "Healthy Fats"],
-      mealType: "Lunch"
+      mealType: "Lunch",
+      image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQl552p5YG_jl9YUZ92ZIMr8_i_i3D-6QpzbA&s"
     },
     {
       id: 9,
@@ -108,7 +116,8 @@ const meals = [
       fats: 10,
       dietaryPreferences: ["Low-Carb", "Gluten-Free"],
       healthGoals: ["Weight Loss", "Low Fat"],
-      mealType: "Dinner"
+      mealType: "Dinner",
+      image:"https://www.paleorunningmomma.com/wp-content/uploads/2020/01/bolognese6.jpg"
     },
     {
       id: 10,
@@ -120,7 +129,8 @@ const meals = [
       fats: 10,
       dietaryPreferences: ["Gluten-Free"],
       healthGoals: ["High Protein", "Heart Health"],
-      mealType: "Dinner"
+      mealType: "Dinner",
+      image:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIHj2CCFPOuy_a51IHq3C8quW2k8SHRN9pqg&s'
     },
     {
       id: 11,
@@ -132,7 +142,8 @@ const meals = [
       fats: 10,
       dietaryPreferences: ["Vegan", "Gluten-Free"],
       healthGoals: ["Weight Loss", "High Fiber"],
-      mealType: "Dinner"
+      mealType: "Dinner",
+      image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7XBMsByLDT-OQfwwi5PHhQ04_hhPfcHs0MA&s"
     },
     {
       id: 12,
@@ -144,7 +155,8 @@ const meals = [
       fats: 15,
       dietaryPreferences: ["Gluten-Free", "Low-Carb"],
       healthGoals: ["Muscle Gain", "High Protein"],
-      mealType: "Dinner"
+      mealType: "Dinner",
+      image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkcdS6ilydpFyW9P0uOCXcjGSbCukl86T-3A&s"
     },
     {
       id: 13,
@@ -156,7 +168,8 @@ const meals = [
       fats: 12,
       dietaryPreferences: ["Vegan", "Low-Carb"],
       healthGoals: ["Weight Loss", "High Fiber"],
-      mealType: "Lunch"
+      mealType: "Lunch",
+      image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbjMVI8MSdd3JU6I5T5hcQHpGIfuiHdXhVHg&s"
     },
     {
       id: 14,
@@ -168,7 +181,8 @@ const meals = [
       fats: 10,
       dietaryPreferences: ["Vegan", "Low-Carb"],
       healthGoals: ["Weight Loss", "High Protein"],
-      mealType: "Breakfast"
+      mealType: "Breakfast",
+      image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAsHZp-xClz1jKZadwP7O3SgWmuGgRZ84IFw&s"
     },
     {
       id: 15,
@@ -180,7 +194,8 @@ const meals = [
       fats: 18,
       dietaryPreferences: ["Vegan", "Gluten-Free"],
       healthGoals: ["Low Carb", "Quick & Easy"],
-      mealType: "Dinner"
+      mealType: "Dinner",
+      image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLYeGrzv2LwUVHGMSB5LrsU1Epui_F6pYJQQ&s"
     },
     {
       id: 16,
@@ -192,7 +207,8 @@ const meals = [
       fats: 12,
       dietaryPreferences: ["Vegetarian", "Gluten-Free"],
       healthGoals: ["Heart Health", "High Fiber"],
-      mealType: "Lunch"
+      mealType: "Lunch",
+      image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAXamjVHZLq6LV2EYfs3ktRuoLIDgdTHgDIQ&s"
     },
     {
       id: 17,
@@ -204,7 +220,8 @@ const meals = [
       fats: 8,
       dietaryPreferences: ["Low-Carb", "Gluten-Free"],
       healthGoals: ["Weight Loss", "Meal Prep"],
-      mealType: "Breakfast"
+      mealType: "Breakfast",
+      image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSiXJrhKSHu2P-Z9p9GZV-W0LcIeiBivlhsaw&s"
     },
     {
       id: 18,
@@ -216,7 +233,8 @@ const meals = [
       fats: 5,
       dietaryPreferences: ["Vegan", "Gluten-Free"],
       healthGoals: ["Digestive Health", "Quick & Easy"],
-      mealType: "Snack"
+      mealType: "Snack",
+      image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS20ghEgtH53bQZ57WZ5thPYxDs_jtMX-Ob6g&s"
     },
     {
       id: 19,
@@ -228,7 +246,8 @@ const meals = [
       fats: 15,
       dietaryPreferences: ["Gluten-Free"],
       healthGoals: ["High Protein", "Meal Prep"],
-      mealType: "Dinner"
+      mealType: "Dinner",
+      image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMfGiFAJ0MZrUMw_UYQjeir3u0Svq4QAiaIA&s"
     },
     {
       id: 20,
@@ -240,7 +259,8 @@ const meals = [
       fats: 10,
       dietaryPreferences: ["Vegan"],
       healthGoals: ["Quick & Easy", "High Fiber"],
-      mealType: "Lunch"
+      mealType: "Lunch",
+      image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-ObmTGkpnMkXqW8nGd_hfZKj8P6cwnMZX2g&s"
     },
     {
       id: 21,
@@ -252,7 +272,8 @@ const meals = [
       fats: 7,
       dietaryPreferences: ["Gluten-Free", "Vegetarian"],
       healthGoals: ["Quick & Easy", "Healthy Carbs"],
-      mealType: "Breakfast"
+      mealType: "Breakfast",
+      image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGV-vB0ICDDx2cbG9EYc9pmDeLn2P-kkMvaQ&s"
     },
     {
       id: 22,
@@ -264,7 +285,8 @@ const meals = [
       fats: 10,
       dietaryPreferences: ["Gluten-Free"],
       healthGoals: ["High Protein", "Muscle Gain"],
-      mealType: "Dinner"
+      mealType: "Dinner",
+      image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSESTMAiJfOw4tW0tp3m2luRwPTYCwYIIQMaA&s"
     },
     {
       id: 23,
@@ -276,7 +298,8 @@ const meals = [
       fats: 8,
       dietaryPreferences: ["Vegan", "Gluten-Free"],
       healthGoals: ["Quick & Easy", "Healthy Fats"],
-      mealType: "Snack"
+      mealType: "Snack",
+      image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRN8iFyVM2APF2GD9prcH6LK1Fsc49vb71gzA&s"
     },
     {
       id: 24,
@@ -288,7 +311,8 @@ const meals = [
       fats: 6,
       dietaryPreferences: ["Vegetarian"],
       healthGoals: ["Digestive Health", "Quick & Easy"],
-      mealType: "Breakfast"
+      mealType: "Breakfast",
+      image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeBBiaOvd7H0s1kAPxdwac2N5N6DEdONh8_g&s"
     },
     {
       id: 25,
@@ -300,7 +324,8 @@ const meals = [
       fats: 8,
       dietaryPreferences: ["Vegan", "Gluten-Free"],
       healthGoals: ["Digestive Health", "Quick & Easy"],
-      mealType: "Snack"
+      mealType: "Snack",
+      image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjpkYGBsKytjbyXfYPf09wQr9lX1S2vWue8w&s"
     },
     {
       id: 26,

@@ -12,9 +12,13 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { useSelector } from "react-redux";
 
 export function ProfilePageComponent() {
 
+  const {userDetails} = useSelector((state)=>state.userReducer)
+  console.log(userDetails);
+  
   const navigate = useNavigate()
 
   return (
@@ -148,8 +152,7 @@ export function ProfilePageComponent() {
                   <AvatarFallback>JD</AvatarFallback>
                 </Avatar>
                 <div>
-                  <CardTitle>John Doe</CardTitle>
-                  <CardDescription>Meal Planning Enthusiast</CardDescription>
+                  <CardTitle>{userDetails.user.username}</CardTitle>
                 </div>
               </div>
             </CardHeader>
@@ -157,35 +160,37 @@ export function ProfilePageComponent() {
               <div className="space-y-4">
                 <div className="flex items-center">
                   {/* <User className="h-5 w-5 text-muted-foreground mr-2" /> */}
-                  <span>Male, 35 years old</span>
+                  <span>{userDetails.user.gender}, {userDetails.user.age} years old</span>
                 </div>
                 <div className="flex items-center">
                   {/* <Mail className="h-5 w-5 text-muted-foreground mr-2" /> */}
-                  <span>john.doe@example.com</span>
+                  <span>{userDetails.user.email}</span>
                 </div>
                 <div className="flex items-center gap-4">
-                    <span>Weight - 70</span>
-                    <span>Height - 89</span>
+                    <span>Weight - {userDetails.user.weight}</span>
+                    <span>Height - {userDetails.user.height}</span>
                 </div>
-                <div className="flex items-center gap-4">
-                  <h2 className="font-semibold">Health goal - </h2>
+                <div className="flex items-center">
+                  <h2 className="font-semibold">Health goal - {userDetails.user.healthGoals}</h2>
                 </div>
-                <div className="flex items-center gap-4">
-                  <h2 className="font-semibold">Activity level- </h2>
+                <div className="flex items-center">
+                  <h2 className="font-semibold">Activity level- {userDetails.user.activityLevel}</h2>
                 </div>
+                <div className="flex items-center">
+                <h2 className="font-semibold">Dietary Preferences - {userDetails.user.dietaryPreferences}</h2>
               </div>
-              <div className="mt-6 space-y-4">
-                <h3 className="font-semibold">Dietary Preferences</h3>
-                <div className="flex flex-wrap gap-2">
-                  {["Vegetarian", "Low Carb", "High Protein"].map((pref) => (
-                    <span
-                      key={pref}
-                      className="bg-secondary text-secondary-foreground px-2 py-1 rounded-full text-sm"
-                    >
-                      {pref}
-                    </span>
-                  ))}
-                </div>
+              <div className="flex items-center">
+                <h2 className="font-semibold">Preferred MealTypes - {userDetails.user.preferredMealTypes}</h2>
+              </div>
+              <div className="flex items-center">
+                <h2 className="font-semibold">Allergies - {userDetails.user.allergies}</h2>
+              </div>
+              <div className="flex items-center">
+                <h2 className="font-semibold">Avoid Ingredients - {userDetails.user.avoidIngredients}</h2>
+              </div>
+              <div className="flex items-center">
+                <h2 className="font-semibold">Target Calories - {userDetails.user.targetCalories}</h2>
+              </div>
               </div>
               <div className="mt-6">
                 <Button

@@ -2,6 +2,7 @@ import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import recipeReducer from "./Slices/recipeSlice";
 import groceryReducer from "./Slices/grocerySlice";
 import mealReducer from "./Slices/mealSlice";
+import userReducer from "./Slices/userSlice"
 import {
   persistReducer,
   FLUSH,
@@ -23,6 +24,7 @@ const rootReducer = combineReducers({
   recipeReducer: recipeReducer,
   groceryReducer: groceryReducer,
   mealReducer: mealReducer,
+  userReducer:userReducer
 });
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 

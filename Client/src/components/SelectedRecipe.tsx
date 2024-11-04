@@ -41,7 +41,7 @@ const SelectedRecipe = () => {
             <img
               src={selectedRecipe.image}
               alt={selectedRecipe.name}
-              className="w-full h-20 object-cover rounded-t-lg"
+              className="w-40 h-40 object-center object-cover rounded-lg"
             />
             <CardTitle className="text-2xl mt-4">
               {selectedRecipe.name}

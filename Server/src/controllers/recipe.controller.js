@@ -17,7 +17,8 @@ const recipes = [
             "Stir in carrots, celery, and tomato sauce; simmer for 30 minutes.",
             "Serve sauce over spaghetti and top with Parmesan cheese."
         ],
-        nutrition: { calories: 600, carbs: 60, protein: 25 }
+        nutrition: { calories: 600, carbs: 60, protein: 25 },
+        image:"https://media.istockphoto.com/id/527439685/photo/spaghetti-bolognese.jpg?s=612x612&w=0&k=20&c=LaPTAxoP3HbQ6qHIWWfTRNxYCFQYNUU6EWMCCXP0iYk="
     },
     {
         id: 2,
@@ -35,7 +36,8 @@ const recipes = [
             "Drizzle Caesar dressing and lemon juice over salad.",
             "Toss to coat and season with salt and pepper to taste."
         ],
-        nutrition: { calories: 400, carbs: 15, protein: 30 }
+        nutrition: { calories: 400, carbs: 15, protein: 30 },
+        image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-z6t_Fl6uI7VoK65rEKsRydUphE53rDkENA&s"
     },
     {
         id: 3,
@@ -53,7 +55,8 @@ const recipes = [
             "Stir-fry for about 10 minutes until vegetables are tender.",
             "Season with soy sauce, salt, and pepper to taste."
         ],
-        nutrition: { calories: 250, carbs: 30, protein: 5 }
+        nutrition: { calories: 250, carbs: 30, protein: 5 },
+        image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7XBMsByLDT-OQfwwi5PHhQ04_hhPfcHs0MA&s"
     },
     {
         id: 4,
@@ -70,7 +73,8 @@ const recipes = [
             "Fill tortillas with beef, lettuce, diced tomato, cheese, and avocado.",
             "Top with sour cream and season with salt and pepper to taste."
         ],
-        nutrition: { calories: 450, carbs: 40, protein: 20 }
+        nutrition: { calories: 450, carbs: 40, protein: 20 },
+        image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCZZ2CyIz6hiwMuudloMFOPFsmKkmhqO-WJw&s"
     },
     {
         id: 5,
@@ -87,7 +91,8 @@ const recipes = [
             "Cook batter on a hot griddle until bubbles form, then flip.",
             "Serve warm with maple syrup."
         ],
-        nutrition: { calories: 300, carbs: 50, protein: 6 }
+        nutrition: { calories: 300, carbs: 50, protein: 6 },
+        image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQLuRL2SO_VoHSvqE41mrsndRl3Tc06QpkUA&s"
     },
     {
         id: 6,
@@ -105,7 +110,8 @@ const recipes = [
             "Simmer on low heat for 20 minutes until chicken is cooked.",
             "Garnish with cilantro before serving."
         ],
-        nutrition: { calories: 500, carbs: 25, protein: 30 }
+        nutrition: { calories: 500, carbs: 25, protein: 30 },
+        image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSixzD4VzaxSG2VMrAqOZ3cec6xSYcSf08qyw&s"
     },
     {
         id: 7,
@@ -120,7 +126,8 @@ const recipes = [
             "Place cheese between bread slices with buttered sides facing out.",
             "Cook on a skillet until golden brown and cheese is melted."
         ],
-        nutrition: { calories: 400, carbs: 30, protein: 10 }
+        nutrition: { calories: 400, carbs: 30, protein: 10 },
+        image:"https://t4.ftcdn.net/jpg/00/96/66/79/360_F_96667985_icjJBJpOeQO6CndaTQmNQEHqG0f6swLR.jpg"
     },
     {
         id: 8,
@@ -138,7 +145,8 @@ const recipes = [
             "Drizzle with olive oil and lemon juice.",
             "Season with salt and pepper, toss, and serve."
         ],
-        nutrition: { calories: 350, carbs: 40, protein: 12 }
+        nutrition: { calories: 350, carbs: 40, protein: 12 },
+        image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfg2Okn9HHWiiAFQuMYfP7y80Wt7wjLnZvdQ&s"
     },
     {
         id: 9,
@@ -155,7 +163,8 @@ const recipes = [
             "Season with salt and pepper.",
             "Bake for 20 minutes until salmon is cooked through."
         ],
-        nutrition: { calories: 400, carbs: 5, protein: 30 }
+        nutrition: { calories: 400, carbs: 5, protein: 30 },
+        image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT65bTssRq-eMlD7OabvKgxFMFuNH6cjG58sw&s"
     },
     {
         id: 10,
@@ -171,7 +180,8 @@ const recipes = [
             "Top with a fried or poached egg.",
             "Season with salt, pepper, and chili flakes."
         ],
-        nutrition: { calories: 300, carbs: 20, protein: 10 }
+        nutrition: { calories: 300, carbs: 20, protein: 10 },
+        image:"https://img.freepik.com/free-photo/avocado-open-toast-with-avocado-slices-lemon-flax-seeds-sesame-seeds-black-bread-slices-top-view_2831-797.jpg"
     },
     {
         id: 11,
@@ -189,7 +199,46 @@ const recipes = [
             "Bring to a boil, then reduce heat and simmer for 1.5 hours.",
             "Season with thyme before serving."
         ],
-        nutrition: { calories: 450, carbs: 30, protein: 35 }
+        nutrition: { calories: 450, carbs: 30, protein: 35 },
+        image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRF3vJj91VGKyLYWxQjzwxgB_qS23749ae7iA&s"
+    },
+    {
+        id: 1,
+        name: "Spaghetti Bolognese",
+        title: "Classic Italian Spaghetti Bolognese",
+        cookingTime: 45,
+        ingredients: [
+            "spaghetti", "ground beef", "onion", "garlic", "tomato sauce",
+            "carrots", "celery", "olive oil", "salt", "pepper", "Parmesan cheese"
+        ],
+        instructions: [
+            "Cook spaghetti as per package instructions and set aside.",
+            "In a large pan, heat olive oil and sauté onions and garlic until fragrant.",
+            "Add ground beef and cook until browned.",
+            "Stir in carrots, celery, and tomato sauce; simmer for 30 minutes.",
+            "Serve sauce over spaghetti and top with Parmesan cheese."
+        ],
+        nutrition: { calories: 600, carbs: 60, protein: 25 },
+        image:"https://media.istockphoto.com/id/527439685/photo/spaghetti-bolognese.jpg?s=612x612&w=0&k=20&c=LaPTAxoP3HbQ6qHIWWfTRNxYCFQYNUU6EWMCCXP0iYk="
+    },
+    {
+        id: 2,
+        name: "Chicken Caesar Salad",
+        title: "Grilled Chicken Caesar Salad",
+        cookingTime: 20,
+        ingredients: [
+            "romaine lettuce", "grilled chicken breast", "Parmesan cheese",
+            "croutons", "Caesar dressing", "lemon juice", "salt", "pepper"
+        ],
+        instructions: [
+            "Chop romaine lettuce and add to a large bowl.",
+            "Slice grilled chicken breast into strips and add to the bowl.",
+            "Add croutons and Parmesan cheese.",
+            "Drizzle Caesar dressing and lemon juice over salad.",
+            "Toss to coat and season with salt and pepper to taste."
+        ],
+        nutrition: { calories: 400, carbs: 15, protein: 30 },
+        image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-z6t_Fl6uI7VoK65rEKsRydUphE53rDkENA&s"
     },
     {
         id: 3,
@@ -207,7 +256,8 @@ const recipes = [
             "Stir-fry for about 10 minutes until vegetables are tender.",
             "Season with soy sauce, salt, and pepper to taste."
         ],
-        nutrition: { calories: 250, carbs: 30, protein: 5 }
+        nutrition: { calories: 250, carbs: 30, protein: 5 },
+        image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7XBMsByLDT-OQfwwi5PHhQ04_hhPfcHs0MA&s"
     },
     {
         id: 4,
@@ -224,7 +274,8 @@ const recipes = [
             "Fill tortillas with beef, lettuce, diced tomato, cheese, and avocado.",
             "Top with sour cream and season with salt and pepper to taste."
         ],
-        nutrition: { calories: 450, carbs: 40, protein: 20 }
+        nutrition: { calories: 450, carbs: 40, protein: 20 },
+        image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCZZ2CyIz6hiwMuudloMFOPFsmKkmhqO-WJw&s"
     },
     {
         id: 5,
@@ -241,7 +292,8 @@ const recipes = [
             "Cook batter on a hot griddle until bubbles form, then flip.",
             "Serve warm with maple syrup."
         ],
-        nutrition: { calories: 300, carbs: 50, protein: 6 }
+        nutrition: { calories: 300, carbs: 50, protein: 6 },
+        image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQLuRL2SO_VoHSvqE41mrsndRl3Tc06QpkUA&s"
     },
     {
         id: 6,
@@ -259,7 +311,8 @@ const recipes = [
             "Simmer on low heat for 20 minutes until chicken is cooked.",
             "Garnish with cilantro before serving."
         ],
-        nutrition: { calories: 500, carbs: 25, protein: 30 }
+        nutrition: { calories: 500, carbs: 25, protein: 30 },
+        image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSixzD4VzaxSG2VMrAqOZ3cec6xSYcSf08qyw&s"
     },
     {
         id: 7,
@@ -274,7 +327,8 @@ const recipes = [
             "Place cheese between bread slices with buttered sides facing out.",
             "Cook on a skillet until golden brown and cheese is melted."
         ],
-        nutrition: { calories: 400, carbs: 30, protein: 10 }
+        nutrition: { calories: 400, carbs: 30, protein: 10 },
+        image:"https://t4.ftcdn.net/jpg/00/96/66/79/360_F_96667985_icjJBJpOeQO6CndaTQmNQEHqG0f6swLR.jpg"
     },
     {
         id: 8,
@@ -292,7 +346,8 @@ const recipes = [
             "Drizzle with olive oil and lemon juice.",
             "Season with salt and pepper, toss, and serve."
         ],
-        nutrition: { calories: 350, carbs: 40, protein: 12 }
+        nutrition: { calories: 350, carbs: 40, protein: 12 },
+        image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfg2Okn9HHWiiAFQuMYfP7y80Wt7wjLnZvdQ&s"
     },
     {
         id: 9,
@@ -309,7 +364,8 @@ const recipes = [
             "Season with salt and pepper.",
             "Bake for 20 minutes until salmon is cooked through."
         ],
-        nutrition: { calories: 400, carbs: 5, protein: 30 }
+        nutrition: { calories: 400, carbs: 5, protein: 30 },
+        image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT65bTssRq-eMlD7OabvKgxFMFuNH6cjG58sw&s"
     },
     {
         id: 10,
@@ -325,7 +381,8 @@ const recipes = [
             "Top with a fried or poached egg.",
             "Season with salt, pepper, and chili flakes."
         ],
-        nutrition: { calories: 300, carbs: 20, protein: 10 }
+        nutrition: { calories: 300, carbs: 20, protein: 10 },
+        image:"https://img.freepik.com/free-photo/avocado-open-toast-with-avocado-slices-lemon-flax-seeds-sesame-seeds-black-bread-slices-top-view_2831-797.jpg"
     },
     {
         id: 11,
@@ -343,8 +400,9 @@ const recipes = [
             "Bring to a boil, then reduce heat and simmer for 1.5 hours.",
             "Season with thyme before serving."
         ],
-        nutrition: { calories: 450, carbs: 30, protein: 35 }
-    },
+        nutrition: { calories: 450, carbs: 30, protein: 35 },
+        image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRF3vJj91VGKyLYWxQjzwxgB_qS23749ae7iA&s"
+    }
 ];
 
 export const getAllRecipe = async (req,res) => {

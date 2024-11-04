@@ -30,8 +30,8 @@ export function GroceryCartComponent() {
   };
 
   return (
-    <div className="container p-3">
-      <Card className=" w-full bg-back-400 ">
+    <div className="container p-3 bg-rd">
+      <Card className=" w-full bg-back-400 h-[87vh]">
         <CardHeader className=''>
           <CardTitle className="text-2xl font-bold flex items-center">
             <ShoppingCart className="mr-2" />
@@ -39,7 +39,7 @@ export function GroceryCartComponent() {
           </CardTitle>
         </CardHeader>
         <CardContent>
-          <ScrollArea className="h-[400px] pr-4">
+          <ScrollArea className="h-[370px] pr-4">
             {groceryItems.map((item) => (
               <div key={item.id} className="flex items-center justify-between py-4">
                 <div className="flex items-center space-x-4">

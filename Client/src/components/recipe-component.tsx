@@ -21,63 +21,11 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 
-interface Recipe {
-  id: number;
-  name: string;
-  description: string;
-  prepTime: string;
-  servings: number;
-  ingredients: string[];
-  instructions: string[];
-  image: string;
-}
-
-const recipes: Recipe[] = [
-  {
-    id: 1,
-    name: "Grilled Chicken Salad",
-    description: "A healthy and delicious salad with grilled chicken breast",
-    prepTime: "20 minutes",
-    servings: 2,
-    ingredients: [
-      "2 chicken breasts",
-      "4 cups mixed salad greens",
-      "1 cucumber, sliced",
-    ],
-    instructions: [],
-    image: "/placeholder.svg?height=100&width=200",
-  },
-  {
-    id: 2,
-    name: "Vegetarian Stir Fry",
-    description: "A colorful mix of vegetables in a savory sauce",
-    prepTime: "25 minutes",
-    servings: 4,
-    ingredients: [
-      "2 cups mixed vegetables (bell peppers, broccoli, carrots)",
-      "1 block firm tofu, cubed",
-      "2 tbsp vegetable oil",
-      "3 cloves garlic, minced",
-    ],
-    instructions: ["Press tofu to remove excess water, then cube."],
-    image: "/placeholder.svg?height=100&width=200",
-  },
-  // Add more recipes as needed
-];
-
 import { setAllRecipe, setSelectedRecipe } from "@/redux/Slices/recipeSlice";
 import { useNavigate } from "react-router-dom";
 
 export function RecipeComponent() {
-  // const [selectedRecipe, setSelectedRecipe] = useState<Recipe | null>(
-  //   recipes[0]
-  // );
-  const [searchTerm, setSearchTerm] = useState("");
-
-  const filteredRecipes = recipes.filter((recipe) =>
-    recipe.name.toLowerCase().includes(searchTerm.toLowerCase())
-  );
-
+ 
   const dispatch = useDispatch();
 
   const allrecipe = useSelector((state) => state.recipeReducer.allRecipe);
@@ -103,6 +51,12 @@ export function RecipeComponent() {
     dispatch(setSelectedRecipe(recipe))
     navigate(`/recipes/:${recipe.id}`)
   }
+
+  const [searchTerm, setSearchTerm] = useState("");
+
+  const filteredRecipes = allrecipe.filter((recipe) =>
+    recipe.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
   return (
     <main className="container mx-auto px-4 py-8 overflow-y-scroll bg-back-400">

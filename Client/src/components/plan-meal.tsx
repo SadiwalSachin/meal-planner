@@ -31,6 +31,8 @@ interface MealCardProps {
   carbs: number;
   fat: number;
   imageUrl: string;
+  mealType:string,
+  id:number
 }
 
 function MealCard({
@@ -41,6 +43,8 @@ function MealCard({
   carbs,
   fat,
   imageUrl,
+  mealType,
+  id
 }: MealCardProps) {
 
   const dispatch = useDispatch()
@@ -51,13 +55,17 @@ function MealCard({
         <img
           src={imageUrl}
           alt={name}
-          className="w-full h-48 object-cover rounded-t-lg"
+          className="w-full h-48 object-cover rounded-lg"
         />
         <CardTitle>{name}</CardTitle>
         <CardDescription>{description}</CardDescription>
       </CardHeader>
       <CardContent>
         <div className="grid grid-cols-2 gap-4">
+        <div className="flex flex-col">
+            <span className="text-sm font-medium">Meal Type</span>
+            <span className="text-2xl font-bold">{mealType}</span>
+          </div>
           <div className="flex flex-col">
             <span className="text-sm font-medium">Calories</span>
             <span className="text-2xl font-bold">{calories}</span>
@@ -78,7 +86,7 @@ function MealCard({
       </CardContent>
       <CardFooter>
         <Button
-        onClick={()=>dispatch(addToMeal(name))}
+        onClick={()=>dispatch(addToMeal({name,calories,protein,carbs,fat,mealType,id}))}
         className="w-full">
           <PlusCircle className="mr-2 h-4 w-4" />
           Add to Meal Plan
@@ -148,7 +156,7 @@ export function PlanMeal() {
                 className="pl-10 bg-gray-200"
               />
             </div>
-            <div className="flex gap-4">
+            <div className="md:flex md:flex-row flex flex-col gap-y-1 md:gap-y-0 md:gap-4">
               <Select onValueChange={handleMealTypeChange}>
                 <SelectTrigger
                 className="w-full bg-gray-200">
@@ -184,21 +192,22 @@ export function PlanMeal() {
                 </SelectContent>
               </Select>
               <Button variant="outline" className="w-full bg-gray-200">
-                <Filter className="mr-2 h-4 w-4" />
-                More Filters
+                According Users Prefrences
               </Button>
             </div>
           </div>
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-              {filteredMeals?.map((mealData)=>(
+              {filteredMeals?.map((mealData,index)=>(
                 <MealCard
+                id={index}
                 name={mealData.name}
                 description={mealData.details}
                 calories={mealData.calories}
                 protein={mealData.protein}
                 carbs={mealData.carbs}
                 fat={mealData.fats}
-                imageUrl="/placeholder.svg?height=200&width=400"
+                imageUrl={mealData.image}
+                mealType={mealData.mealType}
               />
               ))}
             </div>

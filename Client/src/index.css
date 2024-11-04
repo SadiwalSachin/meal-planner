@@ -68,3 +68,20 @@
 /* .class {
   background-color: #d3bba2;
 } */
+
+::-webkit-scrollbar {
+  /* Customize the scrollbar width */
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  /* Customize the scrollbar track */
+  background-color: #FFFFFF;
+}
+
+::-webkit-scrollbar-thumb {
+  /* Customize the scrollbar thumb */
+  background-color: #2F2F31;
+  border-radius: 5px;
+  height: 100px;
+}

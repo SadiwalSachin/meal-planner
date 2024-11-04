@@ -7,10 +7,10 @@ const SideBar = () => {
     <>
       <aside className="hidden w-64 bg-white shadow-md lg:block">
         <div className="flex h-full flex-col ">
-          <div className="flex items-center justify-center h-16   bg-navie-400 ">
+          <div className="flex items-center justify-center py-5 bg-navie-400 ">
             <h1 className="text-xl font-bold text-white ">Meal Planner</h1>
           </div>
-          <nav className="flex-1 overflow-y-auto bg-dashie-200 text-white ">
+          <nav className="flex-1 overflow-y-auto bg-dashie-200 text-white">
             <ul className="p-2 space-y-1">
               <li>
                 <NavLink

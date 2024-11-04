@@ -12,22 +12,25 @@ import SelectedRecipe from "./components/SelectedRecipe";
 import { GroceryCartComponent } from "./components/grocery-cart";
 import UserInfoPage from "./hooks/user-info";
 import { SignIn } from "./components/sign-in";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
     <>
+    <ToastContainer/>
       <Routes>
         <Route path={"/"} element={<HomePageComponent />}>
           <Route path="/" element={<Header />} />
-          <Route path={"/plan-meal"} element={<ProtectedRoute component={<PlanMeal />} />} />
-          <Route path="/recipes" element={<RecipeComponent/>}/>
-          <Route path="/recipes/:id" element={<SelectedRecipe/>}/>
-          <Route path="/grocery" element={<GrocerySearchComponent/>}/>
-          <Route path="/grocery-list" element={<GroceryCartComponent/>}/>
+          <Route path="/plan-meal" element={<ProtectedRoute component={<PlanMeal />} />} />
+          <Route path="/recipes" element={<ProtectedRoute component={<RecipeComponent />} />}/>
+          <Route path="/recipes/:id" element={<ProtectedRoute component={<SelectedRecipe />} />} />
+          <Route path="/grocery"  element={<ProtectedRoute component={<GrocerySearchComponent />} />} />
+          <Route path="/grocery-list"  element={<ProtectedRoute component={<GroceryCartComponent />} />} />
         </Route>
-        <Route  path="/delivery-info" element={<UserInfoPage/>}/>
-        <Route path={"/profile"} element={<ProfilePageComponent />} />
-        <Route path="/edit-profile" element={<EditProfile/>}/>
+        <Route  path="/delivery-info"  element={<ProtectedRoute component={<UserInfoPage />} />}/>
+        <Route path={"/profile"}  element={<ProtectedRoute component={<ProfilePageComponent />} />} />
+        <Route path="/edit-profile"  element={<ProtectedRoute component={<EditProfile />} />}/>
         <Route path="/sign-up" element={<SignUp/>}/>
         <Route path="/sign-in" element={<SignIn/>}/>
       </Routes>

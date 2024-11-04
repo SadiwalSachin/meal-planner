@@ -1,14 +1,20 @@
 import React, { useState } from 'react'
-import { ArrowLeft, Loader2 } from 'lucide-react'
+import { Loader2 } from 'lucide-react'
 import axios from 'axios'
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { useToast } from "@/hooks/use-toast"
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import {useDispatch } from 'react-redux'
+import { setUserDetails,setIsLoggedIn,setToken } from '@/redux/Slices/userSlice'
 
 export function SignIn() {
+
+  const navigate = useNavigate()
+  const dispatch = useDispatch()
+
   const [formData, setFormData] = useState({
     email: '',
     password: '',
@@ -29,12 +35,26 @@ export function SignIn() {
     setIsLoading(true)
 
     try {
-      const response = await axios.post('http://localhost:8080/api/signin', formData)
+      console.log(formData);
+      
+      const response = await axios.post('http://localhost:8080/api/v1/sign-in', formData)
       console.log('Sign-in successful:', response.data)
-      toast({
-        title: "Sign-in Successful",
-        description: "Welcome back!",
-      })
+      if(response.data.success){
+        toast({
+          title: "Sign-in Successful",
+          description: "Welcome back!",
+        })
+
+        dispatch(setUserDetails(response.data))
+        dispatch(setIsLoggedIn(true))
+        dispatch(setToken(response.data.token))
+
+        localStorage.setItem("token",response.data.token)
+        setIsLoading(false)
+        navigate("/")
+
+      }
+
       // Here you would typically store the user's token and redirect to a dashboard or home page
     } catch (error) {
       console.error('Sign-in error:', error)
@@ -49,7 +69,12 @@ export function SignIn() {
   }
 
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="container mx-auto px-4 py-8 h-screen">
+      <Link 
+      to="/"
+      >
+        back to dashboard
+      </Link>
       <div className="mb-6 flex items-center w-full justify-center">
         <h1 className="text-2xl font-bold text-center">Sign In</h1>
       </div>
