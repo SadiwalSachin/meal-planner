@@ -1,4 +1,3 @@
-import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import { ArrowLeft, Camera } from 'lucide-react'
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
@@ -10,13 +9,23 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Textarea } from "@/components/ui/textarea"
 import { useSelector } from 'react-redux'
 
+interface RootState {
+  userReducer : {
+    userDetails:{
+      user:{
+        username:string
+      }
+    }
+  }
+}
+
 export function EditProfile() {
 
-  const {userDetails} = useSelector((state)=>state.userReducer)
+  const {userDetails} = useSelector((state:RootState)=>state.userReducer)
 
   const navigate = useNavigate()
 
-  const handleSubmit = (event: React.FormEvent) => {
+  const handleSubmit = (event:React.FormEvent) => {
     event.preventDefault()
     // Handle form submission here
     console.log('Profile updated')
@@ -41,7 +50,7 @@ export function EditProfile() {
             <div className="flex flex-col items-center">
               <Avatar className="h-24 w-24">
                 <AvatarImage src="/placeholder-avatar.jpg" alt="Profile picture" />
-                <AvatarFallback>JD</AvatarFallback>
+                <AvatarFallback>{userDetails.user.username}</AvatarFallback>
               </Avatar>
               <Button variant="outline" className="mt-4">
                 <Camera className="mr-2 h-4 w-4" />

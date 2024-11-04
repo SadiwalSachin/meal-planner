@@ -1,7 +1,11 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-const ProtectedRoute = ({ component }) => {
+interface ProtectedRouteProps {
+  component: React.ReactElement;
+}
+
+const ProtectedRoute = ({ component }:ProtectedRouteProps) => {
   const navigate = useNavigate();
   useEffect(() => {
     const token = localStorage.getItem("token");

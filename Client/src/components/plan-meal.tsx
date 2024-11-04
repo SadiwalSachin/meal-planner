@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios"
 import { PlusCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -11,7 +11,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 
-import { Search, Filter} from "lucide-react";
+import { Search} from "lucide-react";
 import { Input } from "@/components/ui/input";
 import {
   Select,
@@ -23,16 +23,29 @@ import {
 import { useDispatch } from "react-redux";
 import { addToMeal } from "@/redux/Slices/mealSlice";
 
-interface MealCardProps {
-  name: string;
-  description: string;
-  calories: number;
-  protein: number;
-  carbs: number;
-  fat: number;
-  imageUrl: string;
+interface MealCardDataType {
+  name:string,
+  description:string,
+  calories:number,
+  protein:number,
+  carbs:number,
+  fat:number,
+  imageUrl:string,
   mealType:string,
   id:number
+}
+
+interface mealDataType {
+  name:string,
+  details:string,
+  calories:number,
+  protein:number,
+  carbs:number,
+  fats:number,
+  image:string,
+  mealType:string,
+  dietaryPreferences?:string,
+  id?:number
 }
 
 function MealCard({
@@ -45,7 +58,7 @@ function MealCard({
   imageUrl,
   mealType,
   id
-}: MealCardProps) {
+}:MealCardDataType) {
 
   const dispatch = useDispatch()
 
@@ -98,7 +111,7 @@ function MealCard({
 
 export function PlanMeal() {
 
-  const [allMeals,setAllMeals] = useState()
+  const [allMeals,setAllMeals] = useState<mealDataType[]>([])
   useEffect(()=>{
     console.log("useeffect chala")
     const fetchMeals = async ()=>{
@@ -111,28 +124,28 @@ export function PlanMeal() {
     fetchMeals()
   },[])
 
-  const [filteredMeals, setFilteredMeals] = useState();
-  const [mealTypeFilter, setMealTypeFilter] = useState("");
-  const [dietaryPreferenceFilter, setDietaryPreferenceFilter] = useState("");
+  const [filteredMeals, setFilteredMeals] = useState<mealDataType[]>();
+  const [mealTypeFilter, setMealTypeFilter] = useState<string>("");
+  const [dietaryPreferenceFilter, setDietaryPreferenceFilter] = useState<string>("");
 
-  const filterMeals = () => {
-    const filtered = allMeals.filter(meal => {
+  const filterMeals = () :void => {
+    const filtered = allMeals.filter((meal:mealDataType) => {
       const matchesMealType = mealTypeFilter ? meal.mealType === mealTypeFilter : true;
       const matchesDietaryPreference = dietaryPreferenceFilter
-        ? meal.dietaryPreferences.includes(dietaryPreferenceFilter)
+        ? meal.dietaryPreferences?.includes(dietaryPreferenceFilter)
         : true;
       return matchesMealType && matchesDietaryPreference;
     });
     setFilteredMeals(filtered);
   };
 
-  const handleMealTypeChange = (value) => {
+  const handleMealTypeChange = (value:string) :void => {
     console.log(value);
     setMealTypeFilter(value);
     filterMeals();
   };
 
-  const handleDietaryPreferenceChange = (value) => {
+  const handleDietaryPreferenceChange = (value:string):void => {
     console.log(value);
     setDietaryPreferenceFilter(value);
     filterMeals();
@@ -197,7 +210,7 @@ export function PlanMeal() {
             </div>
           </div>
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-              {filteredMeals?.map((mealData,index)=>(
+              {filteredMeals?.map((mealData:mealDataType,index:number)=>(
                 <MealCard
                 id={index}
                 name={mealData.name}

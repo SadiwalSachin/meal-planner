@@ -1,20 +1,43 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice , PayloadAction } from "@reduxjs/toolkit";
 import { toast } from "react-toastify";
+
+
+interface Meal {
+    mealType: string;
+    name: string;
+    calories: number;
+    protein: number;
+    carbs: number;
+    fat: number;
+    id?:number
+  }
+
+  interface InitialState {
+    allMeal: Meal[];
+    mealNeutraints: {
+      Calories: number;
+      Protein: number;
+      Carbs: number;
+      Fat: number;
+    };
+  }
+
+  const initialState: InitialState = {
+    allMeal: [],
+    mealNeutraints: {
+      Calories: 0,
+      Protein: 0,
+      Carbs: 0,
+      Fat: 0,
+    },
+  };
 
 const mealSlice = createSlice({
     name:"mealSlice",
-    initialState:{
-        allMeal:[],
-        mealNeutraints:{
-            Calories:0,
-            Protein:0,
-            Carbs:0,
-            Fat:0
-        }
-    },
+    initialState,
     reducers:{
-        addToMeal:(state,action)=>{
-            const findExistingMeal = state.allMeal?.find((data) => data.mealType == action.payload.mealType )
+        addToMeal:(state,action: PayloadAction<Meal>)=>{
+            const findExistingMeal = state.allMeal?.find((data:{mealType:string}) => data.mealType == action.payload.mealType )
             if(findExistingMeal){
                 toast.error("This meal type already exist")
             } else {

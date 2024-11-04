@@ -1,14 +1,32 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+
+interface GroceryItem {
+  id: number;
+  name: string;
+  price: number;
+  count: number;
+}
+
+interface InitialState {
+  groceryItems: GroceryItem[];
+  totalPrice: number;
+}
+
+const initialState: InitialState = {
+  groceryItems: [],
+  totalPrice: 0,
+};
+
+
 const grocerySlice = createSlice({
   name: "grocerySlice",
-  initialState: {
-    groceryItems: [],
-    totalPrice: 0,
-  },
+  initialState,
   reducers: {
     addToGrocery: (state, action) => {
-      const item = state.groceryItems.find((i) => i.id === action.payload.id);
+      const item = state.groceryItems.find((i:{
+        id:number
+      }) => i.id === action.payload.id);
       if (item) {
         item.count++;
         state.totalPrice += action.payload.price;

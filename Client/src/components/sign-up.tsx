@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import { ArrowLeft } from 'lucide-react';
+import { useState } from 'react';
 import axios from 'axios';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
@@ -32,7 +31,7 @@ export function SignUp() {
   });
 
   // Handle input change
-  const handleChange = (event) => {
+  const handleChange = (event:React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { id, value } = event.target;
     console.log(id,value);
     
@@ -43,7 +42,7 @@ export function SignUp() {
   };
 
   // Handle select change for custom components
-  const handleSelectChange = (id, value) => {
+  const handleSelectChange = (id:string, value:string) => {
     console.log(id,value);
     
     setFormData((prevData) => ({
@@ -53,7 +52,7 @@ export function SignUp() {
   };
 
   // Handle form submission
-  const handleSubmit = async (event) => {
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     try {
       const response = await axios.post('http://localhost:8080/api/v1/register', formData);

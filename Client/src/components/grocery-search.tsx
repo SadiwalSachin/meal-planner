@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { Search, Filter, ShoppingCart, Minus, Plus, } from 'lucide-react'
+import  { useState } from 'react'
+import { Search, Filter, Minus, Plus, } from 'lucide-react'
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
@@ -8,16 +8,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { addToGrocery, removeFromGrocery } from '@/redux/Slices/grocerySlice'
 // import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 
-interface GroceryItem {
-  id: number
-  name: string
-  price: number
-  unit: string
-  category: string
-  image: string
-}
-
-const groceryItems2: GroceryItem[] = [
+const groceryItems2= [
   { id: 1, name: "Organic Bananas", price: 0.99, unit: "lb", category: "Fruits", image: "https://i.pinimg.com/564x/22/d2/94/22d294948309673bdd7a957de17eb667.jpg" },
   { id: 2, name: "Whole Milk", price: 3.49, unit: "gallon", category: "Dairy", image: "https://i.pinimg.com/564x/5f/c8/27/5fc827023db43fb3caf2a6e4ffd35395.jpg" },
   { id: 3, name: "Whole Wheat Bread", price: 2.99, unit: "loaf", category: "Bakery", image: "https://i.pinimg.com/564x/91/be/e5/91bee5e58c53bc63169dedd49e5da833.jpg" },
@@ -44,27 +35,40 @@ const groceryItems2: GroceryItem[] = [
   { id: 12, name: "Olive Oil", price: 7.99, unit: "16.9oz bottle", category: "Pantry", image: "https://i.pinimg.com/564x/59/70/db/5970db375e343d5d2cd29f2b250ec92d.jpg" },
 ]
 
+interface RootState {
+  groceryReducer:{
+    groceryItems:[]
+  }
+}
+
+interface itemDataType {
+  id:number,
+  image:string,
+  name:string,
+  price:number,
+  unit:string,
+  category:string
+}
+
 export function GrocerySearchComponent() {
-  const [searchTerm, setSearchTerm] = useState("")
-  const [categoryFilter, setCategoryFilter] = useState("")
+  const [searchTerm, setSearchTerm] = useState<string>("")
+  const [categoryFilter] = useState<string>("")
 
   const filteredItems = groceryItems2.filter(item => 
     item.name.toLowerCase().includes(searchTerm.toLowerCase()) &&
     (categoryFilter === "" || item.category === categoryFilter)
   )
 
-  const categories = Array.from(new Set(groceryItems2.map(item => item.category)))
-
   const dispatch = useDispatch()
-  const {groceryItems} = useSelector((state)=>state.groceryReducer)
+  const {groceryItems} = useSelector((state:RootState)=>state.groceryReducer)
   console.log(groceryItems);
   
 
-  const handleAddToGrocery = (item) => {
+  const handleAddToGrocery = (item:itemDataType) => {
     dispatch(addToGrocery(item));
   };
 
-  const handleRemoveFromGrocery = (item)=>{
+  const handleRemoveFromGrocery = (item:itemDataType)=>{
     dispatch(removeFromGrocery(item))
   }
 
@@ -123,7 +127,10 @@ export function GrocerySearchComponent() {
                   </Button>
                   
                   <span className="w-8 text-center">
-                    {groceryItems.map((itemData)=>{
+                    {groceryItems.map((itemData:{
+                      id:number,
+                      count?:number
+                    })=>{
                       if(itemData.id == item.id){
                        return itemData.count 
                       }

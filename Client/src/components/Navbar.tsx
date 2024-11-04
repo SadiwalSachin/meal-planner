@@ -1,4 +1,3 @@
-import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import {
   Bell,
@@ -31,9 +30,15 @@ import {
 } from "@/components/ui/sheet";
 import { useSelector } from "react-redux";
 
+interface RootState {
+  groceryReducer:{
+    groceryItems:[]
+  }
+}
+
 const Navbar = () => {
   const navigate = useNavigate()
-  const {groceryItems} = useSelector((state)=>state.groceryReducer)
+  const {groceryItems} = useSelector((state:RootState)=>state.groceryReducer)
 
   return (
     <>

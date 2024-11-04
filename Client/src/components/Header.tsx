@@ -1,4 +1,3 @@
-import React from "react";
 import {
   Card,
   CardContent,
@@ -7,17 +6,36 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { RxCross2 } from "react-icons/rx";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
+
+interface allMealDataType {
+  name:string,
+  mealType:string
+}
+
+interface RootState {
+  mealReducer:{
+    allMeal:[],
+    mealNeutraints:{
+      Calories:number,
+      Protein:number,
+      Carbs:number,
+      Fat:number
+    }
+  }
+  groceryReducer:{
+    groceryItems:[]
+  }
+}
 
 const Header = () => {
-  const dispatch = useDispatch();
-  const {allMeal} = useSelector((state) => state.mealReducer);
-  const mealNeutraints = useSelector((state)=>state.mealReducer.mealNeutraints)
+  const {allMeal} = useSelector((state:RootState) => state.mealReducer);
+  const mealNeutraints = useSelector((state:RootState)=>state.mealReducer.mealNeutraints)
   console.log(mealNeutraints);
   
   console.log(allMeal);
 
-  const { groceryItems } = useSelector((state) => state.groceryReducer);
+  const { groceryItems } = useSelector((state:RootState) => state.groceryReducer);
 
   return (
     <>
@@ -34,7 +52,7 @@ const Header = () => {
                 <h2 className="uppercase font-bold ml-6 mt-2 text-xl">Today</h2>
                 <CardContent className="">
                   <div className="space-y-2 mt-2 ">
-                    {allMeal?.map((data) => (
+                    {allMeal?.map((data:allMealDataType) => (
                       <div className="flex justify-between items-center">
                         <span className="text-xl">
                           Meal - {data.name} - {data.mealType}
@@ -49,14 +67,6 @@ const Header = () => {
                   </div>
                 </CardContent>
                 <CardContent className="">
-                  {/* <div className="space-y-2 mt-2 ">
-                {meal?.map((data) => (
-                  <div className="flex justify-between items-center">
-                    <span>{data}</span>
-                  </div>
-                ))}
-
-              </div> */}
                 </CardContent>
               </Card>
             </div>
@@ -97,7 +107,10 @@ const Header = () => {
               <CardContent>
                 <ul className="list-disc list-inside space-y-1">
                   {groceryItems.length > 0
-                    ? groceryItems.map((data) => (
+                    ? groceryItems.map((data:{
+                      name:string,
+                      price:number
+                    }) => (
                         <li>
                           {data.name} - {data.price}$
                         </li>

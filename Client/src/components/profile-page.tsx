@@ -1,7 +1,7 @@
 // import React from "react";
 import { useNavigate } from "react-router-dom";
 import { IoArrowBackSharp } from "react-icons/io5";
-import { Calendar, Heart, List, Mail, MapPin, Phone, User } from "lucide-react";
+import { Calendar, Heart, List } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import {
@@ -14,9 +14,40 @@ import {
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useSelector } from "react-redux";
 
+export default  interface UserDetails {
+  message:string,
+  success:boolean,
+  token:string,
+  user:{
+    activityLevel:string,
+    age:number,
+    allergies:string,
+    avoidIngredients:string,
+    createdAt:string,
+    dietaryPreferences:string,
+    email:string,
+    gender:string,
+    healthGoals:string,
+    height:number,
+    preferredMealTypes:string,
+    targetCalories:string,
+    updatedAt:string,
+    username:string,
+    weight:number,
+    __v:number,
+    _id:string
+  }
+}
+
+interface RootState {
+  userReducer: {
+    userDetails: UserDetails;
+  };
+}
+
 export function ProfilePageComponent() {
 
-  const {userDetails} = useSelector((state)=>state.userReducer)
+  const {userDetails} = useSelector((state:RootState)=>state.userReducer)
   console.log(userDetails);
   
   const navigate = useNavigate()

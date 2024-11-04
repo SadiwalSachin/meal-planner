@@ -1,11 +1,9 @@
-import React, { useEffect, useRef, useState } from "react";
-import { Search, Filter, Clock, Users } from "lucide-react";
+import  { useEffect, useState } from "react";
+import { Search, Filter } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Card,
-  CardContent,
   CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
@@ -24,12 +22,38 @@ import { useDispatch, useSelector } from "react-redux";
 import { setAllRecipe, setSelectedRecipe } from "@/redux/Slices/recipeSlice";
 import { useNavigate } from "react-router-dom";
 
+interface recipeDataType {
+  cookingTime:number,
+  id:number,
+  image:string,
+  ingredients:[],
+  instructions:[],
+  name:string,
+  nutrition:{
+    calories:number,
+    carbs:number,
+    protien:number
+  },
+  title:string
+}
+
+interface selectedRecipeDataType{
+  id:number
+}
+
+interface RootState {
+  recipeReducer: {
+    allRecipe: [];
+    selectedRecipe:selectedRecipeDataType
+  };
+}
+
 export function RecipeComponent() {
  
   const dispatch = useDispatch();
 
-  const allrecipe = useSelector((state) => state.recipeReducer.allRecipe);
-  let selectedRecipe = useSelector((state)=> state.recipeReducer.selectedRecipe)
+  const allrecipe = useSelector((state:RootState) => state.recipeReducer.allRecipe);
+  let selectedRecipe = useSelector((state:RootState)=> state.recipeReducer.selectedRecipe)
 
   useEffect(() => {
       const fetchAllRecipe = async () => {
@@ -47,16 +71,13 @@ export function RecipeComponent() {
 
   console.log(selectedRecipe);
   const navigate = useNavigate()
-  const handleSelectRecipeAndNavigation = (recipe) => {
+  const handleSelectRecipeAndNavigation = (recipe:recipeDataType) => {
     dispatch(setSelectedRecipe(recipe))
     navigate(`/recipes/:${recipe.id}`)
   }
 
-  const [searchTerm, setSearchTerm] = useState("");
+  const [searchTerm, setSearchTerm] = useState<string>("");
 
-  const filteredRecipes = allrecipe.filter((recipe) =>
-    recipe.name.toLowerCase().includes(searchTerm.toLowerCase())
-  );
 
   return (
     <main className="container mx-auto px-4 py-8 overflow-y-scroll bg-back-400">
@@ -105,7 +126,7 @@ export function RecipeComponent() {
           </div>
           <ScrollArea className="w-full">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-              {allrecipe?.map((recipe,index) => (
+              {allrecipe?.map((recipe:recipeDataType,index:number) => (
                 <Card
                   key={index}
                   className={`cursor-pointer transition-colors ${

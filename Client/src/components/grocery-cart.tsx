@@ -1,4 +1,3 @@
-import React, { useState } from 'react'
 import { Minus, Plus, ShoppingCart } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
@@ -8,24 +7,34 @@ import { useDispatch, useSelector } from 'react-redux'
 import { addToGrocery, removeFromGrocery } from '@/redux/Slices/grocerySlice'
 import { useNavigate } from 'react-router-dom'
 
-interface GroceryItem {
-  id: number
-  name: string
-  price: number
-  quantity: number
+interface RootState {
+  groceryReducer:{
+    groceryItems:[],
+    totalPrice:number
+  }
+}
+
+interface itemDataType {
+  id:number,
+  image:string,
+  name:string,
+  price:number,
+  unit:string,
+  category:string,
+  count?:number
 }
 
 export function GroceryCartComponent() {
 
   const navigate = useNavigate()
   const dispatch = useDispatch()
-  const { groceryItems, totalPrice } = useSelector((state)=>state.groceryReducer)
+  const { groceryItems, totalPrice } = useSelector((state:RootState)=>state.groceryReducer)
 
-  const handleAddToGrocery = (item) => {
+  const handleAddToGrocery = (item:itemDataType) => {
     dispatch(addToGrocery(item));
   };
 
-  const handleRemoveFromGrocery = (item) => {
+  const handleRemoveFromGrocery = (item:itemDataType) => {
     dispatch(removeFromGrocery(item));
   };
 
@@ -40,7 +49,7 @@ export function GroceryCartComponent() {
         </CardHeader>
         <CardContent>
           <ScrollArea className="h-[370px] pr-4">
-            {groceryItems.map((item) => (
+            {groceryItems.map((item:itemDataType) => (
               <div key={item.id} className="flex items-center justify-between py-4">
                 <div className="flex items-center space-x-4">
                   <div className="font-medium">{item.name}</div>

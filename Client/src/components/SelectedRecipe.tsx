@@ -1,4 +1,4 @@
-import { Clock, Users } from "lucide-react";
+import { Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { IoArrowBackSharp } from "react-icons/io5";
 import {
@@ -12,7 +12,7 @@ import {
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
-interface Recipe {
+interface selectedRecipeDataType {
   id: number;
   name: string;
   description: string;
@@ -21,11 +21,19 @@ interface Recipe {
   ingredients: string[];
   instructions: string[];
   image: string;
+  title:string,
+  cookingTime:number
+}
+
+interface RootState {
+  recipeReducer:{
+    selectedRecipe:selectedRecipeDataType
+  }
 }
 
 const SelectedRecipe = () => {
   const navigate = useNavigate()
-  const selectedRecipe = useSelector((state)=>state.recipeReducer.selectedRecipe)
+  const selectedRecipe = useSelector((state:RootState)=>state.recipeReducer.selectedRecipe)
   console.log(selectedRecipe);
   
 
