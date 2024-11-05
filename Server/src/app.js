@@ -8,7 +8,7 @@ app.use(express.json())
 app.use(express.urlencoded({extended:true}))
 
 app.use(cors({
-    origin:"*",
+    origin:"https://meal-planner-according-to-u.onrender.com",
     credentials:true
 }))
 

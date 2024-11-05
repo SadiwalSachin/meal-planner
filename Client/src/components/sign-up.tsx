@@ -55,7 +55,7 @@ export function SignUp() {
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     try {
-      const response = await axios.post('http://localhost:8080/api/v1/register', formData);
+      const response = await axios.post('https://meal-planner-1fkw.onrender.com/api/v1/register', formData);
       console.log('User registered successfully:', response.data);
       if(response.data.success){
         navigate("/")

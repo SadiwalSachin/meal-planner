@@ -83,15 +83,22 @@ const Navbar = () => {
                   className="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-md"
                 >
                   <List className="w-5 h-5 mr-3" />
-                  Shopping List
+                  Purchase Grocery
                 </Link>
-                <a
-                  href="#"
+                <Link
+                  to="/grocery-list"
+                  className="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-md"
+                >
+                  <Settings className="w-5 h-5 mr-3" />
+                  Grocery List
+                </Link>
+                <Link
+                  to="/edit-profile"
                   className="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-md"
                 >
                   <Settings className="w-5 h-5 mr-3" />
                   Settings
-                </a>
+                </Link>
               </nav>
             </SheetContent>
           </Sheet>

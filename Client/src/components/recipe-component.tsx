@@ -58,7 +58,7 @@ export function RecipeComponent() {
   useEffect(() => {
       const fetchAllRecipe = async () => {
         const response = await axios.get(
-          "http://localhost:8080/api/v1/recipe/get-all-recipe"
+          "https://meal-planner-1fkw.onrender.com/api/v1/recipe/get-all-recipe"
         );
         console.log(response.data.data);
         // setAllRecipe(response.data.data)
