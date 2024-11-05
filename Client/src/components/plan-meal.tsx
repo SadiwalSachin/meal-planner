@@ -116,7 +116,7 @@ export function PlanMeal() {
     console.log("useeffect chala")
     const fetchMeals = async ()=>{
       console.log("fetch meal function cahala");
-      const response = await axios.get("http://localhost:8080/api/v1/meal/get-all-meals")
+      const response = await axios.get("https://meal-planner-1fkw.onrender.com/api/v1/meal/get-all-meals")
       console.log("response come from meals :-",response.data.data);
       setAllMeals(response.data.data)
       setFilteredMeals(response.data.data)
